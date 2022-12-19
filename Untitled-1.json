@@ -1,0 +1,7 @@
+// https://data.mongodb-api.com/app/data-qgbjc/endpoint/data/v1
+// mongosh "mongodb+srv://cluster1.kx0vjtl.mongodb.net/client" --apiVersion 1 --username Admin
+// use client
+// client.clientid.find()
+// db.collection.clientid.find().pretty()
+// db.comments.find()
+mongoexport --uri="mongodb+srv://Admin:123578b6@cluster1.kx0vjtl.mongodb.net/client?retryWrites=true&w=majority" --collection=client --out=notes.json ;

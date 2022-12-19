@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Parking System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="pricing.css"> -->
+<!-- <script src="./notes.json"></script> -->
+<style>
+.title{
+border-left: #000000 10px solid; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+letter-spacing: 2px;
+font-weight: lighter;
+} 
+#banner:hover{
+    background-color: #ddd;
+    scale: 1.0;
+    color: rgb(0, 0, 0);
+    border-bottom: #000000 0px solid
+}
+ 
+ .topnav {
+    overflow: hidden;
+    background-color: rgb(223, 223, 223);
+  }
+  
+  .center{
+    text-align: center;
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    scale: 1.05;
+    color: rgb(198, 0, 0);
+    border-bottom: #000000 3px solid
+  }
+  
+
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+  }
+
+  table {
+    min-height: 150px;
+    max-height: 60vh;
+    overflow-y: auto;
+    display:inline-block;
+    justify-content: center;
+  }
+ 
+  .filld{
+    font-family: monospace;
+  }
+
+
+
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <a href="./index.html" class="active title"  id="banner">AutoParkSol</a>
+            <a href="./aboutus.html" style="float: right;">About Us</a>   
+            <a href="#contact" style="float: right;" >Admin</a>
+            <a href="#home"  style="float: right;">Book Parking</a>
+            <a href="/pricing.html"    style="float: right;" >Pricings</a>
+            <!-- <a href="#TwitterLink" style="float: right;"><img width="30px" src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a>
+            <a href="#InstagramLink" style="float: right;"><img  width="25px"  src="https://img.icons8.com/color/48/null/instagram-new--v1.png"/></a>
+            <a href="#about" style="float: right;"><img  width="30px" src="https://img.icons8.com/color/48/null/facebook-circled--v1.png"/></a> -->
+        </div>
+    </header>
+    <main>
+        <div class="row my-3">
+            
+            <div class="col-1"></div>
+                <div class="col-10">
+                    <h2 class="container filld">
+                       
+                       Slot Filling details :
+                      
+                    </h2>
+                    <table class="table table-bordered table-striped table-hover my-2 mx-1">
+            <thead>
+                <tr>
+                    <th scope="col " class="col-1 px-2">Slot No</th>
+                    <th scope="col " class="col-2 px-2">Owner Name</th>
+                    <th scope="col " class="col-2 px-2">Vehicle Number</th>
+                    <th scope="col " class="col-1 px-1">Vehicle Type</th>
+                    <th scope="col " class="col-2 px-2">Parking Time</th>
+                    <th scope="col " class="col-2 px-2">Owner Contact No</th>
+                    <th scope="col " class="col-2 px-2">Parking-charges/Plan</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+           
+              </tbody>
+                    </table>
+                </div>
+                
+             <div class="col-1"></div>
+        </div>
+    </main>
+
+<script src="./Untitled.js"></script>
+<script src="./Untitledcopy.js"></script>
+    <script>
+
+    var json = JSON.stringify(data1);
+
+
+
+function getuserdata(data1,data2){
+  for(var i in data2){
+    for(var j in data1){
+    if(data2[i].VehicleNo ==data1[j].VehicleNo ){
+      let row = `<tr>
+      <td>${data2[i].SlotNo}</td>
+      <td>${data1[j].Name}</td>
+      <td>${data1[j].VehicleNo}</td>
+      <td>${data1[j].VehicleType}</td>
+      <td class="center">${"-- --"}</td>
+      <td>${data1[j].PhoneNo}</td>            
+      <td>${data1[j]. Plan}</td>
+</tr>`
+let table =document.getElementById("table-body");
+table.innerHTML+=row
+    }
+  }}
+}
+getuserdata(data1,data2);
+    </script>
+</body>
+</html>
